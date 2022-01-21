@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <style>
+      .js{
+        font-weight:bold;
+      }
+    </style>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      var Links = {
+        setColor: function(color){
+          var alist= document.querySelectorAll('a');
+          var i = 0;
+          while(i < alist.length){
+              console.log(alist[i]);
+              alist[i].style.color = color;
+              i = i + 1;
+            }
+          }}
+
+       var Body = {
+         setColor : function(color){
+           document.querySelector('body').style.color = color;
+         },
+         setbackgroundcolor : function(color){
+           document.querySelector('body').style.backgroundColor = color;}
+         }
+
+      function nightDayHandler(self){
+        var target = document.querySelector('body');
+        if(self.value === 'night'){
+          Body.setbackgroundcolor('black');
+          Body.setColor('white') ;
+          self.value = 'day';
+
+          Links.setColor('powderblue');
+        } else {
+          Body.setbackgroundcolor('white');
+          Body.setColor('black') ;
+          self.value='night';
+
+          Links.setColor('blue');
+          }
+         }
+
+
+    </script>
+  </head>
+  <body>
+    <h1 style="font-size: 50px"><a href="index.html">Hello</a> </h1>
+    <input type="button" value="night" onclick="
+    nightDayHandler(this)
+    ">
+    <ul>
+      <li><h2><a href="index.html"> HTML</a></h2></li>
+      <li><h2><a href="index.html"> CSS</a></h2></li>
+      <li><h2><a href="index.html"> JavaScript</a></h2></li>
+    </ul>
+
+
+
+
+    <p>
+      <span class="js"> The World Wide Web (abbreviated WWW or the Web) </span> is an information space where documents and other web resources are identified by Uniform Resource Locators (URLs), interlinked by hypertext links, and can be accessed via the Internet.[1] English scientist Tim Berners-Lee invented the World Wide Web in 1989. He wrote the first web browser computer program in 1990 while employed at CERN in Switzerland.[2][3] The Web browser was released outside of CERN in 1991, first to other research institutions starting in January 1991 and to the general public on the Internet in August 1991.
+    </p>
+    <input type="button" value="night" onclick="
+    if(this.value === 'night'){
+      document.querySelector('body').style.backgroundColor = 'black';
+      document.querySelector('body').style.color = 'white' ;
+      this.value = 'day'
+    } else {document.querySelector('body').style.backgroundColor = 'white';
+    document.querySelector('body').style.color = 'black' ;
+    this.value='night'}
+    ">
+
+    <input type="button" name="" value="hi" onclick="alert('hi')">
+    <input type="text" onchange="alert('changed')">
+    <input type="text" onkeydown="alert('key down!')">
+<!--이벤트 on 머시기 -->
+  </body>
+</html>
